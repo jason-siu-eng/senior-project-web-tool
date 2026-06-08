@@ -1,0 +1,11 @@
+# Web app
+streamlit
+
+# Data work
+pandas
+numpy
+requests
+
+# Machine learning
+scikit-learn
+joblib
