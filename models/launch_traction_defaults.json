@@ -1,0 +1,16 @@
+{
+  "defaults": {
+    "prelaunch_price_usd": 14.99,
+    "prelaunch_achievements_count": 34.5,
+    "log_total_reviews": 5.688655953169341,
+    "confidence_score": "Mid"
+  },
+  "numeric_defaults": {
+    "prelaunch_price_usd": 14.99,
+    "prelaunch_achievements_count": 34.5,
+    "log_total_reviews": 5.688655953169341
+  },
+  "categorical_defaults": {
+    "confidence_score": "Mid"
+  }
+}

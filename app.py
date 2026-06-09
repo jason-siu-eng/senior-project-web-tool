@@ -247,19 +247,19 @@ def render_launch_traction(launch_traction_result: dict) -> None:
 
     probability_columns = st.columns(4)
     probability_columns[0].metric(
-        "Model P(Not Viable)",
+        "Probability Not Viable",
         format_percent(launch_traction_result["traction_P_Not_Viable"]),
     )
     probability_columns[1].metric(
-        "Model P(Low)",
+        "Probability Low Outcome",
         format_percent(launch_traction_result["traction_P_Low"]),
     )
     probability_columns[2].metric(
-        "Model P(Mid)",
+        "Probability Mid Outcome",
         format_percent(launch_traction_result["traction_P_Mid"]),
     )
     probability_columns[3].metric(
-        "Model P(High)",
+        "Probability High Outcome",
         format_percent(launch_traction_result["traction_P_High"]),
     )
 
@@ -336,7 +336,23 @@ def render_financials(financial_summary: dict, scenario_table: pd.DataFrame) -> 
     display_table["margin_multiple"] = display_table["margin_multiple"].map(
         lambda value: f"{value:.2f}x"
     )
+    display_table = display_table.rename(
+        columns={
+            "scenario": "Scenario",
+            "users": "Users",
+            "net_revenue": "Net Revenue",
+            "margin_of_safety": "Margin of Safety",
+            "margin_multiple": "Margin Multiple",
+            "risk_label": "Risk Label",
+        }
+    )
     st.dataframe(display_table, use_container_width=True, hide_index=True)
+    st.markdown(
+        "To read more about the research process, click "
+        "[here](https://docs.google.com/document/d/"
+        "1xzJKIxGH_luGZvE7QjWzWw78HFqS_VxHbKeuhv4Dt5g/"
+        "edit?usp=sharing)."
+    )
 
 
 def main() -> None:

@@ -1,0 +1,50 @@
+{
+  "review_column": "review_sentiment",
+  "target_value": "Positive",
+  "prior_strength": 75,
+  "adjustment_blend_weight": 0.15,
+  "scenario_uplift": 0.15,
+  "global_distribution": {
+    "Not Viable": 0.22023809523809523,
+    "Low": 0.35714285714285715,
+    "Mid": 0.2261904761904762,
+    "High": 0.19642857142857142
+  },
+  "review_priors": {
+    "Mixed": {
+      "sample_size": 88,
+      "shrink_weight": 0.5398773006134969,
+      "raw_distribution": {
+        "Not Viable": 0.25,
+        "Low": 0.3522727272727273,
+        "Mid": 0.25,
+        "High": 0.14772727272727273
+      },
+      "smoothed_distribution": {
+        "Not Viable": 0.23630587204206838,
+        "Low": 0.3545135845749343,
+        "Mid": 0.23904469763365468,
+        "High": 0.17013584574934268
+      },
+      "smoothed_expected_users": 58219.76336546888
+    },
+    "Positive": {
+      "sample_size": 80,
+      "shrink_weight": 0.5161290322580645,
+      "raw_distribution": {
+        "Not Viable": 0.1875,
+        "Low": 0.3625,
+        "Mid": 0.2,
+        "High": 0.25
+      },
+      "smoothed_distribution": {
+        "Not Viable": 0.2033410138248848,
+        "Low": 0.3599078341013825,
+        "Mid": 0.21267281105990782,
+        "High": 0.2240783410138249
+      },
+      "smoothed_expected_users": 64192.39631336405
+    }
+  },
+  "note": "Review reception is kept out of the core launch-traction model. Positive reception is applied afterward as a fixed expected-user scenario uplift."
+}

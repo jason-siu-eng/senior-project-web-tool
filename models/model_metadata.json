@@ -1,0 +1,116 @@
+{
+  "project": "senior_project_webtool",
+  "purpose": "Estimate expected users and financial viability for indie turn-based strategy games.",
+  "outcome_tier_users": {
+    "Not Viable": 10000,
+    "Low": 35000,
+    "Mid": 75000,
+    "High": 150000
+  },
+  "disclaimer": "Predictions are directional estimates for planning and comparison only. They are not exact sales forecasts.",
+  "models": {
+    "expected_users": {
+      "model_name": "Expected Users 4-Class Pre-Launch Model",
+      "dataset": "data/expected_users_4class_augmented_model_dataset.csv",
+      "row_count": 168,
+      "feature_count": 9,
+      "class_counts": {
+        "High": 33,
+        "Low": 60,
+        "Mid": 38,
+        "Not Viable": 37
+      },
+      "class_labels": [
+        "High",
+        "Low",
+        "Mid",
+        "Not Viable"
+      ],
+      "model_path": "models/expected_users_model.pkl",
+      "feature_path": "models/expected_users_features.json",
+      "categorical_feature_count": 3,
+      "numeric_feature_count": 6,
+      "binary_feature_count": 0,
+      "defaults_path": "models/expected_users_defaults.json",
+      "base_probs_path": "models/expected_users_base_probs.json"
+    },
+    "launch_traction": {
+      "model_name": "Launch Traction 4-Class Expected Users Model",
+      "dataset": "data/expected_users_4class_augmented_model_dataset.csv",
+      "row_count": 168,
+      "feature_count": 4,
+      "class_counts": {
+        "High": 33,
+        "Low": 60,
+        "Mid": 38,
+        "Not Viable": 37
+      },
+      "class_labels": [
+        "High",
+        "Low",
+        "Mid",
+        "Not Viable"
+      ],
+      "model_path": "models/launch_traction_model.pkl",
+      "feature_path": "models/launch_traction_features.json",
+      "defaults_path": "models/launch_traction_defaults.json",
+      "base_probs_path": "models/launch_traction_base_probs.json",
+      "review_prior_path": "models/launch_traction_review_priors.json",
+      "publisher_prior_path": "models/launch_traction_publisher_priors.json",
+      "categorical_feature_count": 1,
+      "numeric_feature_count": 3,
+      "binary_feature_count": 0
+    },
+    "downside_risk": {
+      "model_name": "Downside Risk Binary Model",
+      "dataset": "data/downside_risk_binary_model_dataset.csv",
+      "row_count": 130,
+      "feature_count": 73,
+      "class_counts": {
+        "Low": 60,
+        "MidHigh": 70
+      },
+      "class_labels": [
+        "Low",
+        "MidHigh"
+      ],
+      "model_path": "models/downside_model.pkl",
+      "feature_path": "models/downside_features.json",
+      "categorical_feature_count": 5,
+      "numeric_feature_count": 22,
+      "binary_feature_count": 46
+    },
+    "upside_potential": {
+      "model_name": "Upside Potential Binary Model",
+      "dataset": "data/upside_potential_binary_model_dataset.csv",
+      "row_count": 70,
+      "feature_count": 72,
+      "class_counts": {
+        "High": 32,
+        "Mid": 38
+      },
+      "class_labels": [
+        "High",
+        "Mid"
+      ],
+      "model_path": "models/upside_model.pkl",
+      "feature_path": "models/upside_features.json",
+      "categorical_feature_count": 5,
+      "numeric_feature_count": 21,
+      "binary_feature_count": 46
+    }
+  },
+  "publisher_support_adjustment": {
+    "publisher_column": "prelaunch_publisher_type",
+    "prior_strength": 75,
+    "scenario_uplift": 0.1762,
+    "method": "Publisher support is removed from the core launch-traction classifier. Publishing Studio is applied afterward as a 17.62% expected-user scenario uplift before the separate publisher partnership slider."
+  },
+  "review_reception_adjustment": {
+    "review_column": "review_sentiment",
+    "target_value": "Positive",
+    "prior_strength": 75,
+    "scenario_uplift": 0.15,
+    "method": "Review sentiment and positive review rate are removed from the core launch-traction classifier. Positive reception is applied afterward as a 15% expected-user scenario uplift."
+  }
+}

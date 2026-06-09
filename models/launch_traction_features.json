@@ -1,0 +1,47 @@
+{
+  "model_name": "Launch Traction 4-Class Expected Users Model",
+  "dataset": "data/expected_users_4class_augmented_model_dataset.csv",
+  "target_column": "outcome_level",
+  "feature_count": 4,
+  "features": [
+    "prelaunch_price_usd",
+    "prelaunch_achievements_count",
+    "log_total_reviews",
+    "confidence_score"
+  ],
+  "categorical_features": [
+    "confidence_score"
+  ],
+  "numeric_features": [
+    "prelaunch_price_usd",
+    "prelaunch_achievements_count",
+    "log_total_reviews"
+  ],
+  "binary_features": [],
+  "excluded_columns": [
+    "appid",
+    "downside_target",
+    "game_name",
+    "outcome_level",
+    "upside_target"
+  ],
+  "blocked_feature_substrings": [
+    "owner",
+    "owner_midpoint",
+    "owners_per_review",
+    "revenue",
+    "review",
+    "review_sentiment",
+    "positive_review_pct",
+    "log_total_reviews",
+    "total_reviews",
+    "positive_reviews",
+    "negative_reviews",
+    "sales_confidence",
+    "confidence_score",
+    "confidence",
+    "post_launch",
+    "postlaunch",
+    "post-launch"
+  ]
+}

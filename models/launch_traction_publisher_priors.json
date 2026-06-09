@@ -1,0 +1,66 @@
+{
+  "publisher_column": "prelaunch_publisher_type",
+  "prior_strength": 75,
+  "adjustment_blend_weight": 0.15,
+  "scenario_uplift": 0.1762,
+  "global_distribution": {
+    "Not Viable": 0.22023809523809523,
+    "Low": 0.35714285714285715,
+    "Mid": 0.2261904761904762,
+    "High": 0.19642857142857142
+  },
+  "publisher_priors": {
+    "Independent": {
+      "sample_size": 105,
+      "shrink_weight": 0.5833333333333334,
+      "raw_distribution": {
+        "Not Viable": 0.24761904761904763,
+        "Low": 0.4,
+        "Mid": 0.1619047619047619,
+        "High": 0.19047619047619047
+      },
+      "smoothed_distribution": {
+        "Not Viable": 0.23621031746031745,
+        "Low": 0.3821428571428572,
+        "Mid": 0.1886904761904762,
+        "High": 0.1929563492063492
+      },
+      "smoothed_expected_users": 58832.341269841265
+    },
+    "Publishing Studio": {
+      "sample_size": 59,
+      "shrink_weight": 0.44029850746268656,
+      "raw_distribution": {
+        "Not Viable": 0.1864406779661017,
+        "Low": 0.2711864406779661,
+        "Mid": 0.3389830508474576,
+        "High": 0.2033898305084746
+      },
+      "smoothed_distribution": {
+        "Not Viable": 0.20535714285714285,
+        "Low": 0.3192963752665245,
+        "Mid": 0.27585287846481876,
+        "High": 0.19949360341151384
+      },
+      "smoothed_expected_users": 63841.95095948827
+    },
+    "Unknown": {
+      "sample_size": 4,
+      "shrink_weight": 0.05063291139240506,
+      "raw_distribution": {
+        "Not Viable": 0.0,
+        "Low": 0.5,
+        "Mid": 0.25,
+        "High": 0.25
+      },
+      "smoothed_distribution": {
+        "Not Viable": 0.20908679927667267,
+        "Low": 0.364376130198915,
+        "Mid": 0.22739602169981918,
+        "High": 0.19914104882459313
+      },
+      "smoothed_expected_users": 61769.89150090416
+    }
+  },
+  "note": "Publisher support is kept out of the core launch-traction model. Publishing Studio is applied afterward as a fixed expected-user scenario uplift."
+}
