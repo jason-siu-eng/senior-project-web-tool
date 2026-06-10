@@ -1,11 +1,11 @@
 # Web app
-streamlit==1.57.0
+streamlit
 
 # Data work
-pandas==2.3.0
-numpy==2.3.0
+pandas
+numpy
 requests
 
 # Machine learning
-scikit-learn==1.8.0
-joblib==1.5.3
+scikit-learn
+joblib
